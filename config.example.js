@@ -65,7 +65,7 @@ module.exports = {
         retryAmount: 10,
         retryDelay: 5000,
         maximumRetries: 100,
-        id: "SONY-MC-57151",
+        id: "main",
         secure: false,
       },
     ],

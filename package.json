@@ -9,6 +9,7 @@
     "node": ">=16.11.0"
   },
   "scripts": {
+    "init": "npm i && cp .env.example .env && cp config.example.js config.js",
     "dev": "nodemon .",
     "start": "node .",
     "format": "prettier --write src",
