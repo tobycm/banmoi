@@ -1,6 +1,6 @@
-fetch('api-fetch.kobayashikenji1.repl.co/api/info')
-  .then(response => response.json())
-  .then(data => {
+fetch("api-fetch.kobayashikenji1.repl.co/api/info")
+  .then((response) => response.json())
+  .then((data) => {
     // Trích xuất thông tin cần thiết từ đối tượng JSON
     const cmd = data.commands; // Thay key và subkey bằng tên phù hợp trong JSON
     const sv = data.guilds;
@@ -14,6 +14,6 @@ fetch('api-fetch.kobayashikenji1.repl.co/api/info')
     user.textContent = userr;
     server.textContent = sv;
   })
-  .catch(error => {
-    console.error('Error:', error);
+  .catch((error) => {
+    console.error("Error:", error);
   });

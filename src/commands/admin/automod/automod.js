@@ -172,7 +172,8 @@ module.exports = {
       response = await setAction(settings, message.guild, action);
     } else if (input === "debug") {
       const status = args[1].toLowerCase();
-      if (!["on", "off"].includes(status)) return message.safeReply("Trạng thái không hợp lệ. Giá trị hợp lệ là `on/off`");
+      if (!["on", "off"].includes(status))
+        return message.safeReply("Trạng thái không hợp lệ. Giá trị hợp lệ là `on/off`");
       response = await setDebug(settings, status);
     }
 

@@ -207,7 +207,9 @@ async function performAutomod(message, settings) {
       memberDb.strikes = 0;
 
       // Add Moderation Action
-      await addModAction(guild.members.me, member, "Automod: Nhận tối đa số lần cảnh cáo", automod.action).catch(() => {});
+      await addModAction(guild.members.me, member, "Automod: Nhận tối đa số lần cảnh cáo", automod.action).catch(
+        () => {}
+      );
     }
 
     await memberDb.save();

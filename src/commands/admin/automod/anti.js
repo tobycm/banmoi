@@ -115,14 +115,16 @@ module.exports = {
     let response;
     if (sub == "ghostping") {
       const status = args[1].toLowerCase();
-      if (!["on", "off"].includes(status)) return message.safeReply("Trạng thái không hợp lệ. Giá trị phải là `on/off`");
+      if (!["on", "off"].includes(status))
+        return message.safeReply("Trạng thái không hợp lệ. Giá trị phải là `on/off`");
       response = await antiGhostPing(settings, status);
     }
 
     //
     else if (sub == "spam") {
       const status = args[1].toLowerCase();
-      if (!["on", "off"].includes(status)) return message.safeReply("Trạng thái không hợp lệ. Giá trị phải là `on/off`");
+      if (!["on", "off"].includes(status))
+        return message.safeReply("Trạng thái không hợp lệ. Giá trị phải là `on/off`");
       response = await antiSpam(settings, status);
     }
 
@@ -130,7 +132,8 @@ module.exports = {
     else if (sub === "massmention") {
       const status = args[1].toLowerCase();
       const threshold = args[2] || 3;
-      if (!["on", "off"].includes(status)) return message.safeReply("Trạng thái không hợp lệ. Giá trị phải là `on/off`");
+      if (!["on", "off"].includes(status))
+        return message.safeReply("Trạng thái không hợp lệ. Giá trị phải là `on/off`");
       response = await antiMassMention(settings, status, threshold);
     }
 

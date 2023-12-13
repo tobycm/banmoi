@@ -89,9 +89,7 @@ module.exports = (client) => {
   }
 
   if (DASHBOARD.enabled) {
-    components.push(
-      new ButtonBuilder().setLabel("Dashboard").setURL(DASHBOARD.baseURL).setStyle(ButtonStyle.Link)
-    );
+    components.push(new ButtonBuilder().setLabel("Dashboard").setURL(DASHBOARD.baseURL).setStyle(ButtonStyle.Link));
   }
 
   let buttonsRow = new ActionRowBuilder().addComponents(components);

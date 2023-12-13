@@ -311,7 +311,9 @@ async function setChannel(settings, channel) {
   }
   settings.welcome.channel = channel.id;
   await settings.save();
-  return `Đã lưu thiết lập! Tin nhắn chào mừng sẽ được gửi đến kênh ${channel ? channel.toString() : "Không tìm thấy kênh"}`;
+  return `Đã lưu thiết lập! Tin nhắn chào mừng sẽ được gửi đến kênh ${
+    channel ? channel.toString() : "Không tìm thấy kênh"
+  }`;
 }
 
 async function setDescription(settings, desc) {

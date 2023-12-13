@@ -62,7 +62,11 @@ module.exports = {
     if (cmd.cooldown > 0) {
       const remaining = getRemainingCooldown(message.author.id, cmd);
       if (remaining > 0) {
-        return message.safeReply(`Bạn đang trong thời gian chờ do sử dụng lệnh quá nhanh. Bạn có thể sử dụng lại lệnh trong: \`${timeformat(remaining)}\``);
+        return message.safeReply(
+          `Bạn đang trong thời gian chờ do sử dụng lệnh quá nhanh. Bạn có thể sử dụng lại lệnh trong: \`${timeformat(
+            remaining
+          )}\``
+        );
       }
     }
 
@@ -128,7 +132,9 @@ module.exports = {
       const remaining = getRemainingCooldown(interaction.user.id, cmd);
       if (remaining > 0) {
         return interaction.reply({
-          content: `Bạn đang trong thời gian chờ do sử dụng lệnh quá nhanh. Bạn có thể sử dụng lại lệnh trong: \`${timeformat(remaining)}\``,
+          content: `Bạn đang trong thời gian chờ do sử dụng lệnh quá nhanh. Bạn có thể sử dụng lại lệnh trong: \`${timeformat(
+            remaining
+          )}\``,
           ephemeral: true,
         });
       }

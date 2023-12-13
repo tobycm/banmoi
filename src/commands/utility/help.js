@@ -99,10 +99,7 @@ async function getHelpMenu({ client, guild }) {
   }
 
   const menuRow = new ActionRowBuilder().addComponents(
-    new StringSelectMenuBuilder()
-      .setCustomId("help-menu")
-      .setPlaceholder("Hãy chọn danh mục lệnh")
-      .addOptions(options)
+    new StringSelectMenuBuilder().setCustomId("help-menu").setPlaceholder("Hãy chọn danh mục lệnh").addOptions(options)
   );
 
   // Buttons Row

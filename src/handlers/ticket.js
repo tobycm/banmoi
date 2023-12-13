@@ -173,7 +173,8 @@ async function handleTicketOpen(interaction) {
 
   // limit check
   const existing = getTicketChannels(guild).size;
-  if (existing > settings.ticket.limit) return interaction.followUp("Hiện tại đã có quá nhiều ticket, vui lòng thử lại sau!");
+  if (existing > settings.ticket.limit)
+    return interaction.followUp("Hiện tại đã có quá nhiều ticket, vui lòng thử lại sau!");
 
   // check categories
   let catName = null;
@@ -290,7 +291,9 @@ async function handleTicketClose(interaction) {
   await interaction.deferReply({ ephemeral: true });
   const status = await closeTicket(interaction.channel, interaction.user);
   if (status === "MISSING_PERMISSIONS") {
-    return interaction.followUp("Không thể đóng Ticket, thiếu quyền. Liên hệ với người quản lý máy chủ để được trợ giúp!");
+    return interaction.followUp(
+      "Không thể đóng Ticket, thiếu quyền. Liên hệ với người quản lý máy chủ để được trợ giúp!"
+    );
   } else if (status == "ERROR") {
     return interaction.followUp("Không thể tạo kênh Ticket, đã xảy ra lỗi!");
   }

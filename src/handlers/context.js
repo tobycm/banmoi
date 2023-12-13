@@ -14,7 +14,9 @@ module.exports = {
       const remaining = getRemainingCooldown(interaction.user.id, context);
       if (remaining > 0) {
         return interaction.reply({
-          content: `Bạn đang trong thời gian chờ do sử dụng lệnh quá nhanh. Bạn có thể sử dụng lại lệnh trong: ${timeformat(remaining)}`,
+          content: `Bạn đang trong thời gian chờ do sử dụng lệnh quá nhanh. Bạn có thể sử dụng lại lệnh trong: ${timeformat(
+            remaining
+          )}`,
           ephemeral: true,
         });
       }

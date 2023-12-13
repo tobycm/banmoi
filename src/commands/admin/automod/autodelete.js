@@ -126,21 +126,24 @@ module.exports = {
 
     if (sub == "attachments") {
       const status = args[1].toLowerCase();
-      if (!["on", "off"].includes(status)) return message.safeReply("Trạng thái không hợp lệ. Giá trị phải là `on/off`");
+      if (!["on", "off"].includes(status))
+        return message.safeReply("Trạng thái không hợp lệ. Giá trị phải là `on/off`");
       response = await antiAttachments(settings, status);
     }
 
     //
     else if (sub === "invites") {
       const status = args[1].toLowerCase();
-      if (!["on", "off"].includes(status)) return message.safeReply("Trạng thái không hợp lệ. Giá trị phải là `on/off`");
+      if (!["on", "off"].includes(status))
+        return message.safeReply("Trạng thái không hợp lệ. Giá trị phải là `on/off`");
       response = await antiInvites(settings, status);
     }
 
     //
     else if (sub == "links") {
       const status = args[1].toLowerCase();
-      if (!["on", "off"].includes(status)) return message.safeReply("Trạng thái không hợp lệ. Giá trị phải là `on/off`");
+      if (!["on", "off"].includes(status))
+        return message.safeReply("Trạng thái không hợp lệ. Giá trị phải là `on/off`");
       response = await antilinks(settings, status);
     }
 
@@ -196,7 +199,9 @@ async function antilinks(settings, input) {
   const status = input.toUpperCase() === "ON" ? true : false;
   settings.automod.anti_links = status;
   await settings.save();
-  return `Tin nhắn ${status ? "chứa các liên kết bây giờ sẽ tự động bị xóa" : "Từ bây giờ sẽ không được lọc cho các liên kết"}`;
+  return `Tin nhắn ${
+    status ? "chứa các liên kết bây giờ sẽ tự động bị xóa" : "Từ bây giờ sẽ không được lọc cho các liên kết"
+  }`;
 }
 
 async function maxLines(settings, input) {

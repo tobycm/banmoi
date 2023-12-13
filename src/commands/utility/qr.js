@@ -1,4 +1,4 @@
-const { EmbedBuilder , ApplicationCommandOptionType } = require("discord.js");
+const { EmbedBuilder, ApplicationCommandOptionType } = require("discord.js");
 
 module.exports = {
   name: "qr",
@@ -27,18 +27,18 @@ module.exports = {
   async messageRun(message, args) {
     const Msg = args.join("+");
     const Embed = new EmbedBuilder()
-    .setColor("Random")
-    .setImage(encodeURI(`https://chart.googleapis.com/chart?chl=${Msg}&chs=200x200&cht=qr&chld=H%7C0`))
-    .setTimestamp();
-    message.delete()
+      .setColor("Random")
+      .setImage(encodeURI(`https://chart.googleapis.com/chart?chl=${Msg}&chs=200x200&cht=qr&chld=H%7C0`))
+      .setTimestamp();
+    message.delete();
     await message.safeReply({ embeds: [Embed] });
   },
   async interactionRun(interaction) {
     const type = interaction.options.getString("url");
     const Embeds = new EmbedBuilder()
-    .setColor("Random")
-    .setImage(encodeURI(`https://chart.googleapis.com/chart?chl=${type}&chs=200x200&cht=qr&chld=H%7C0`))
-    .setTimestamp();
+      .setColor("Random")
+      .setImage(encodeURI(`https://chart.googleapis.com/chart?chl=${type}&chs=200x200&cht=qr&chld=H%7C0`))
+      .setTimestamp();
     await interaction.followUp({ embeds: [Embeds], ephemeral: true });
   },
 };

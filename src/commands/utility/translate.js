@@ -6,7 +6,26 @@ const { GOOGLE_TRANSLATE } = require("@src/data.json");
 // Discord limits to a maximum of 25 choices for slash command
 // Add any 25 language codes from here: https://cloud.google.com/translate/docs/languages
 
-const choices = ["ar", "cs", "de", "en", "fa", "fr", "hi", "hr", "it", "ja", "ko", "la", "nl", "pl", "ta", "te", "vi", "ru"];
+const choices = [
+  "ar",
+  "cs",
+  "de",
+  "en",
+  "fa",
+  "fr",
+  "hi",
+  "hr",
+  "it",
+  "ja",
+  "ko",
+  "la",
+  "nl",
+  "pl",
+  "ta",
+  "te",
+  "vi",
+  "ru",
+];
 
 /**
  * @type {import("@structures/Command")}

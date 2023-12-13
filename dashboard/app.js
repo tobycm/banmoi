@@ -10,10 +10,10 @@ module.exports.launch = async (client) => {
     MongoStore = require("connect-mongo"),
     mongoose = require("@src/database/mongoose"),
     path = require("path"),
-    app = express();
+    app = express(),
     http = require("http"),
     server = http.createServer(app),
-    WebSocket = require('ws'),
+    WebSocket = require("ws"),
     wss = new WebSocket.Server({ server });
 
   /* Routers */
@@ -26,7 +26,6 @@ module.exports.launch = async (client) => {
   client.config = config;
 
   const db = await mongoose.initializeMongoose();
-
 
   app
     .use(express.json()) // For post methods
@@ -77,7 +76,6 @@ module.exports.launch = async (client) => {
         currentURL: `${req.protocol}://${req.get("host")}${req.originalUrl}`,
       });
     });
-    
 
   /* Start */
   app.listen(app.get("port"), () => {

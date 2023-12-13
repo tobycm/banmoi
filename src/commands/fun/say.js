@@ -28,7 +28,6 @@ module.exports = {
     message.delete();
     const usa = args.join(" ");
     let say = args.join(" ");
-    return message.channel.send({ content: say, allowedMentions: { parse: [] }});;
+    return message.channel.send({ content: say, allowedMentions: { parse: [] } });
   },
 };
-

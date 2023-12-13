@@ -78,9 +78,9 @@ module.exports = (client) => {
     let timeoutClear = null;
     queue.data.channel.safeSend("Đã phát hết hàng đợi.");
     if (timeoutClear !== null) {
-      setTimeout( async () => {
+      setTimeout(async () => {
         await client.musicManager.destroyPlayer(queue.player.guildId).then(queue.player.disconnect());
-        queue.data.channel.safeSend("Đã rời khỏi Voice!")
+        queue.data.channel.safeSend("Đã rời khỏi Voice!");
       }, 120000);
     }
   });

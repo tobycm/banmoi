@@ -99,8 +99,7 @@ async function setAutoRole({ guild }, role, settings) {
   if (role) {
     if (role.id === guild.roles.everyone.id) return "Bạn không thể đặt vai trò `@everyone` làm AutoRole";
     if (!guild.members.me.permissions.has("ManageRoles")) return "Tớ không có quyền `Quản lý vai trò`";
-    if (guild.members.me.roles.highest.position < role.position)
-      return "Tớ không có quyền chỉ định vai trò này";
+    if (guild.members.me.roles.highest.position < role.position) return "Tớ không có quyền chỉ định vai trò này";
     if (role.managed) return "Ầu! Vai trò này được quản lý bởi một tích hợp";
   }
 

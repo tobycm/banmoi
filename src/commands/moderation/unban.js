@@ -89,7 +89,10 @@ async function getMatchingBans(guild, match) {
   }
 
   const menuRow = new ActionRowBuilder().addComponents(
-    new StringSelectMenuBuilder().setCustomId("unban-menu").setPlaceholder("Chọn người dùng để hủy cấm").addOptions(options)
+    new StringSelectMenuBuilder()
+      .setCustomId("unban-menu")
+      .setPlaceholder("Chọn người dùng để hủy cấm")
+      .addOptions(options)
   );
 
   return { content: "Hãy chọn người dùng bạn muốn hủy cấm", components: [menuRow] };

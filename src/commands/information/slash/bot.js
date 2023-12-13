@@ -74,7 +74,9 @@ function botInvite(client) {
     .setAuthor({ name: "Lời mời" })
     .setColor(EMBED_COLORS.BOT_EMBED)
     .setThumbnail(client.user.displayAvatarURL())
-    .setDescription("Chào đằng đó nha! Cảm ơn vì đã cân nhắc đến chuyện mời tớ :3\nSử dụng nút bên dưới để điều hướng đến nơi cậu muốn");
+    .setDescription(
+      "Chào đằng đó nha! Cảm ơn vì đã cân nhắc đến chuyện mời tớ :3\nSử dụng nút bên dưới để điều hướng đến nơi cậu muốn"
+    );
 
   // Buttons
   let components = [];
@@ -85,9 +87,7 @@ function botInvite(client) {
   }
 
   if (DASHBOARD.enabled) {
-    components.push(
-      new ButtonBuilder().setLabel("Dashboard").setURL(DASHBOARD.baseURL).setStyle(ButtonStyle.Link)
-    );
+    components.push(new ButtonBuilder().setLabel("Dashboard").setURL(DASHBOARD.baseURL).setStyle(ButtonStyle.Link));
   }
 
   let buttonsRow = new ActionRowBuilder().addComponents(components);

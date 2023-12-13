@@ -201,9 +201,7 @@ module.exports = {
 
     // Member missing permissions
     else if (response === "MEMBER_PERM") {
-      return interaction.followUp(
-        `Bạn không có quyền Đọc Lịch sử Tin nhắn & Quản lý Tin nhắn trong ${channel}`
-      );
+      return interaction.followUp(`Bạn không có quyền Đọc Lịch sử Tin nhắn & Quản lý Tin nhắn trong ${channel}`);
     }
 
     // Bot missing permissions

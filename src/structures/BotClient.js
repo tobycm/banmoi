@@ -27,7 +27,7 @@ module.exports = class BotClient extends Client {
         GatewayIntentBits.GuildInvites,
         GatewayIntentBits.GuildMessageReactions,
         GatewayIntentBits.GuildVoiceStates,
-        GatewayIntentBits.GuildMembers
+        GatewayIntentBits.GuildMembers,
       ],
       partials: [Partials.User, Partials.Message, Partials.Reaction],
       allowedMentions: {

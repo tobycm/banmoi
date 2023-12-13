@@ -1,5 +1,5 @@
-.tile:focus img{
-background-image: url("/hibikibanmai.png");
-width: 900px;
-height: 900px;
+.tile:focus img {
+  background-image: url("/hibikibanmai.png");
+  width: 900px;
+  height: 900px;
 }

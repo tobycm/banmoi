@@ -6,7 +6,9 @@ module.exports = (client) => {
     .setAuthor({ name: "Invite" })
     .setColor(EMBED_COLORS.BOT_EMBED)
     .setThumbnail(client.user.displayAvatarURL())
-    .setDescription("Này đằng đó! Cảm ơn vì đã cân nhắc mời tớ nha\nSử dụng nút bên dưới để điều hướng đến nơi cậu muốn");
+    .setDescription(
+      "Này đằng đó! Cảm ơn vì đã cân nhắc mời tớ nha\nSử dụng nút bên dưới để điều hướng đến nơi cậu muốn"
+    );
 
   // Buttons
   let components = [];
@@ -17,9 +19,7 @@ module.exports = (client) => {
   }
 
   if (DASHBOARD.enabled) {
-    components.push(
-      new ButtonBuilder().setLabel("Dashboard").setURL(DASHBOARD.baseURL).setStyle(ButtonStyle.Link)
-    );
+    components.push(new ButtonBuilder().setLabel("Dashboard").setURL(DASHBOARD.baseURL).setStyle(ButtonStyle.Link));
   }
 
   let buttonsRow = new ActionRowBuilder().addComponents(components);

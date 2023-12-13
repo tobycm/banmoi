@@ -389,7 +389,8 @@ async function runModalSetup({ member, channel, guild }, targetCh) {
 
   // winner count
   const winners = parseInt(modal.fields.getTextInputValue("winners"));
-  if (isNaN(winners)) return modal.editReply("Thiết lập đã bị hủy bỏ. Bạn đã không chỉ định số lượng người chiến thắng hợp lệ");
+  if (isNaN(winners))
+    return modal.editReply("Thiết lập đã bị hủy bỏ. Bạn đã không chỉ định số lượng người chiến thắng hợp lệ");
 
   // roles
   const allowedRoles =
